@@ -8,11 +8,7 @@ body {
 }
 
 .sr_only {
-    color: transparent;
-    position: absolute;
-    height: 0;
-    top: 0;
-    left: 0;
+    @include m.srOnlyTitle();
 }
 
 .container {

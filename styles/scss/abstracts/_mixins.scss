@@ -5,3 +5,11 @@
     align-items: $align-items;
     gap: $gap;
 }
+
+@mixin srOnlyTitle($color: transparent, $position: absolute, $height: 0, $top: 0, $left: 0) {
+    color: $color;
+    position: $position;
+    height: $height;
+    top: $top;
+    left: $left;
+}
