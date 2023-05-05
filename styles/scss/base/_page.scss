@@ -1,0 +1,8 @@
+@use "../abstracts/mixins.scss" as m;
+@use "../abstracts/variables" as v;
+
+body {
+    @include m.flex();
+    font-family: v.$ff;
+    background-color: v.$light-grayish-cyan;
+}
