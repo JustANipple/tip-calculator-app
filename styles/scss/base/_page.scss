@@ -2,7 +2,7 @@
 @use "../abstracts/variables" as v;
 
 body {
-    @include m.flex();
+    @include m.flex-horizontal($align-items: flex-end);
     font-family: v.$ff;
     background-color: v.$light-grayish-cyan;
 }
@@ -12,7 +12,10 @@ body {
 }
 
 .container {
-    @include m.flex($flex-direction: column);
+    @include m.flex-horizontal($flex-direction: column);
+}
+
+.inner_box {    
     padding: 2rem;
     background-color: v.$white;
     border-radius: 1.5rem 1.5rem 0 0;

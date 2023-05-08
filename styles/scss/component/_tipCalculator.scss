@@ -1,0 +1,77 @@
+@use "../abstracts/mixins.scss" as m;
+@use "../abstracts/variables" as v;
+
+.tip_calculator {
+    @include m.flex-vertical($gap: 1rem);
+    
+    /* Calculator bill */
+    .calculator_bill {
+        @include m.flex-vertical($gap: .5rem);
+
+        .bill_label {
+            color: v.$dark-grayish-cyan;
+        }
+
+        .bill_compile {
+            @include m.flex-horizontal($justify-content: flex-start);
+            width: 100%;
+            background-color: v.$very-light-grayish-cyan;
+            position: relative;
+            height: 3rem;
+            border-radius: .5rem;
+            padding-block: .5rem;
+            padding-inline: 1rem;
+
+            /*
+            .compile_dollar_icon {}
+            */
+
+            .compile_input {
+                text-align: right;
+                color: v.$very-dark-cyan;
+                font-size: v.$fs;
+                background-color: transparent;
+                width: 100%;
+                border: none;
+                outline: none;
+
+                &::placeholder {
+                    color: inherit;
+                }
+            }
+        }
+    }
+
+    /* calculator tip */
+    .calculator_tip {
+        @include m.flex-vertical($gap: 1rem);
+
+        .tip_label {
+            color: v.$dark-grayish-cyan;
+        }
+
+        .tip_options {
+            @include m.flex-horizontal($justify-content: flex-start);
+            flex-wrap: wrap;
+
+            .tip_percentage,
+            .tip_custom {
+                flex-basis: 9.125rem;
+                border: none;
+            }
+
+            .tip_percentage {
+                background-color: v.$very-dark-cyan;
+                color: v.$white;
+                border-radius: .25rem;
+                font-size: v.$fs;
+                padding-block: .375rem;
+            }
+
+            .tip_custom {
+                background-color: v.$very-light-grayish-cyan;
+            }
+        }
+    }
+
+}

@@ -28,61 +28,69 @@
     alt="splitter"
     class="main_logo">
 
-    <div class="tip_calculator">
-      <div class="calculator_bill">
-        <p class="bill_label">Bill</p>
-        <div class="bill_compile">
-          <img 
-          src="images/icon-dollar.svg" 
-          alt="dollar icon"
-          class="compile_dollar_icon">
-          <input type="number" class="compile_input" placeholder="0">
+    <div class="inner_box">
+
+      <div class="tip_calculator">
+        <div class="calculator_bill">
+          <p class="bill_label">Bill</p>
+          <div class="bill_compile">
+            <img 
+            src="images/icon-dollar.svg" 
+            alt="dollar icon"
+            class="compile_dollar_icon">
+            <input type="number" class="compile_input" placeholder="142.55">
+          </div>
+        </div>
+  
+        <div class="calculator_tip">
+          <p class="tip_label">Select Tip %</p>
+          <div class="tip_options">
+            <button class="tip_percentage">5%</button>
+            <button class="tip_percentage">10%</button>
+            <button class="tip_percentage">15%</button>
+            <button class="tip_percentage">25%</button>
+            <button class="tip_percentage">50%</button>
+            <input type="number" placeholder="Custom" class="tip_custom">
+          </div>
+        </div>
+  
+        <div class="calculator_people_number">
+          <p class="number_label">Number of People</p>
+          <div class="number_compile">
+            <img 
+            src="images/icon-person.svg" 
+            alt="person icon"
+            class="compile_person_icon">
+            <input type="number" class="compile_input" placeholder="0">
+          </div>
         </div>
       </div>
-
-      <div class="calculator_tip">
-        <p class="tip_label">Select Tip %</p>
-        <button class="tip_percentage">5%</button>
-        <button class="tip_percentage">10%</button>
-        <button class="tip_percentage">15%</button>
-        <button class="tip_percentage">25%</button>
-        <button class="tip_percentage">50%</button>
-        <input type="number" placeholder="Custom">
-      </div>
-
-      <div class="calculator_people_number">
-        <p class="number_label">Number of People</p>
-        <div class="number_compile">
-          <img 
-          src="images/icon-person.svg" 
-          alt="person icon"
-          class="compile_person_icon">
-          <input type="number" class="compile_input" placeholder="0">
+  
+      <div class="tip_result">
+        <div class="result_tip">
+          <p class="tip_text">Tip Amount <br> 
+            <span class="text_person">/ person</span> 
+          </p>
+          <p class="tip_value">$ 
+            <span class="value_number">4.27</span>
+          </p>
         </div>
+  
+        <div class="result_total">
+          <p class="total_text">Total <br> 
+            <span class="text_person">/ person</span> 
+          </p>
+          <p class="total_value">$ 
+            <span class="value_number">32.79</span>
+          </p>
+        </div>
+  
+        <button class="reset">Reset</button>
       </div>
+
     </div>
 
-    <div class="tip_result">
-      <div class="result_tip">
-        <p class="tip_text">Tip Amount <br> 
-          <span class="text_person">/ person</span> 
-        </p>
-        <p class="tip_value">$ 
-          <span class="value_number">4.27</span>
-        </p>
-      </div>
-
-      <div class="result_total">
-        <p class="total_text">Total <br> 
-          <span class="text_person">/ person</span> 
-        </p>
-        <p class="total_value">$ 
-          <span class="value_number">32.79</span>
-        </p>
-      </div>
-
-      <button class="reset">Reset</button>
-    </div>
+    
 
   </main>
 
