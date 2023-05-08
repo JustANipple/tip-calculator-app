@@ -22,23 +22,27 @@
   <main class="container">
 
     <h1 class="sr_only">Tip calculator app</h1>
-    
-    <img 
+  
+    <div class="main_logo">
+      <img 
     src="images/logo.svg" 
-    alt="splitter"
-    class="main_logo">
+    alt="splitter">
+    </div>
 
     <div class="inner_box">
 
       <div class="tip_calculator">
         <div class="calculator_bill">
-          <p class="bill_label">Bill</p>
+          <div class="bill_label">
+            <p class="label_text">Bill</p>
+            <p class="label_error">Can't be zero</p>
+          </div>
           <div class="bill_compile">
             <img 
             src="images/icon-dollar.svg" 
             alt="dollar icon"
             class="compile_dollar_icon">
-            <input type="number" class="compile_input" placeholder="142.55">
+            <input type="tel" class="compile_input" placeholder="0">
           </div>
         </div>
   
@@ -50,47 +54,48 @@
             <button class="tip_percentage">15%</button>
             <button class="tip_percentage">25%</button>
             <button class="tip_percentage">50%</button>
-            <input type="number" placeholder="Custom" class="tip_custom">
+            <input type="tel" placeholder="Custom" class="tip_custom">
           </div>
         </div>
   
         <div class="calculator_people_number">
-          <p class="number_label">Number of People</p>
+          <div class="number_label">
+            <p class="label_text">Number of People</p>
+            <p class="label_error">Can't be zero</p>
+          </div>
           <div class="number_compile">
             <img 
             src="images/icon-person.svg" 
             alt="person icon"
             class="compile_person_icon">
-            <input type="number" class="compile_input" placeholder="0">
+            <input type="tel" class="compile_input" placeholder="0">
           </div>
         </div>
       </div>
   
-      <div class="tip_result">
-        <div class="result_tip">
-          <p class="tip_text">Tip Amount <br> 
-            <span class="text_person">/ person</span> 
-          </p>
-          <p class="tip_value">$ 
-            <span class="value_number">4.27</span>
-          </p>
-        </div>
-  
-        <div class="result_total">
-          <p class="total_text">Total <br> 
-            <span class="text_person">/ person</span> 
-          </p>
-          <p class="total_value">$ 
-            <span class="value_number">32.79</span>
-          </p>
+      <div class="tip_block_result">
+        <div class="result_amounts">
+          <div class="amount_tip">
+            <p class="tip_text">Tip Amount <br> 
+              <span class="text_person">/ person</span> 
+            </p>
+            <p class="tip_value">$<span class="value_number">0.00</span>
+            </p>
+          </div>
+    
+          <div class="amount_total">
+            <p class="total_text">Total <br> 
+              <span class="text_person">/ person</span> 
+            </p>
+            <p class="total_value">$<span class="value_number">0.00</span>
+            </p>
+          </div>
         </div>
   
         <button class="reset">Reset</button>
       </div>
 
     </div>
-
-    
 
   </main>
 

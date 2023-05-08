@@ -1,0 +1,60 @@
+@use "../abstracts/mixins.scss" as m;
+@use "../abstracts/variables" as v;
+
+.tip_block_result {
+    @include m.flex-vertical($gap: 2rem, $justify-content: space-between);
+    padding-block: 2.5rem 1.5rem;
+    padding-inline: 1.5rem;
+    background-color: v.$very-dark-cyan;  
+    border-radius: 1rem;  
+    width: 100%;
+
+    @media screen and (min-width: v.$min-width) {
+        max-width: 25.75rem;
+        padding-block: 3.5rem 3rem;
+        padding-inline: 2.5rem;
+    }
+
+    .result_amounts {
+        @include m.flex-vertical($gap: 1rem);
+        width: 100%;
+
+        .amount_tip,
+        .amount_total {
+            @include m.flex-horizontal($justify-content: space-between);
+            width: inherit;
+
+            .tip_text,
+            .total_text {
+                color: v.$white;
+
+                .text_person {
+                    color: v.$grayish-cyan;
+                    font-size: calc(v.$fs / 1.75);
+                }
+            }
+
+            .tip_value,
+            .total_value {
+                color: v.$strong-cyan;
+                font-size: calc(v.$fs * 1.25);
+
+                @media screen and (min-width: v.$min-width) {
+                    font-size: calc(v.$fs * 2);
+                }
+            }
+        }
+    }
+
+    .reset {
+        width: 100%;
+        background-color: v.$strong-cyan;
+        border: none;
+        color: v.$very-dark-cyan;
+        text-transform: uppercase;
+        padding-block: .5rem;
+        font-size: calc(v.$fs / 1.25);
+        border-radius: .25rem;
+        opacity: 25%;
+    }
+}
