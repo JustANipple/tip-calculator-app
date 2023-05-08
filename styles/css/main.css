@@ -169,6 +169,7 @@ p, h1, h2, h3, h4, h5, h6 {
   border-radius: 0.5rem;
   padding-block: 0.5rem;
   padding-inline: 1rem;
+  cursor: pointer;
   /*
   .compile_dollar_icon {}
   */
@@ -188,6 +189,7 @@ p, h1, h2, h3, h4, h5, h6 {
   width: 100%;
   border: none;
   outline: none;
+  cursor: inherit;
 }
 .tip_calculator .calculator_bill .bill_compile .compile_input::placeholder,
 .tip_calculator .calculator_bill .bill_compile .compile_input::placeholder,
