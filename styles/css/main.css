@@ -170,6 +170,7 @@ p, h1, h2, h3, h4, h5, h6 {
   padding-block: 0.5rem;
   padding-inline: 1rem;
   cursor: pointer;
+  border: 2px solid transparent;
   /*
   .compile_dollar_icon {}
   */
@@ -200,6 +201,14 @@ p, h1, h2, h3, h4, h5, h6 {
 .tip_calculator .calculator_people_number .number_compile .compile_input::placeholder,
 .tip_calculator .calculator_people_number .number_compile .compile_input::placeholder {
   color: hsl(184, 14%, 56%);
+}
+.tip_calculator .calculator_bill #inputValid,
+.tip_calculator .calculator_people_number #inputValid {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+.tip_calculator .calculator_bill #inputInvalid,
+.tip_calculator .calculator_people_number #inputInvalid {
+  border: 2px solid hsl(12, 32%, 56%);
 }
 .tip_calculator .calculator_tip {
   display: flex;
@@ -232,6 +241,7 @@ p, h1, h2, h3, h4, h5, h6 {
   font-size: 1.5rem;
   padding-block: 0.375rem;
   padding-inline: 1rem;
+  cursor: pointer;
 }
 @media screen and (min-width: 48rem) {
   .tip_calculator .calculator_tip .tip_options .tip_percentage,
@@ -243,9 +253,22 @@ p, h1, h2, h3, h4, h5, h6 {
   background-color: hsl(183, 100%, 15%);
   color: hsl(0, 0%, 100%);
 }
+.tip_calculator .calculator_tip .tip_options .tip_custom {
+  border: 2px solid transparent;
+}
+.tip_calculator .calculator_tip .tip_options #chosen {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
 .tip_calculator .calculator_tip .tip_options #selected {
   background-color: hsl(172, 67%, 45%);
   color: hsl(183, 100%, 15%);
+}
+.tip_calculator .calculator_tip .tip_options #inputValid {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+.tip_calculator .calculator_tip .tip_options #inputInvalid {
+  border: 2px solid hsl(12, 32%, 56%);
 }
 .tip_calculator .calculator_tip .tip_options .tip_custom {
   text-align: right;

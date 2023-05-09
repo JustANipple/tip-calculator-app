@@ -43,6 +43,7 @@
             padding-block: .5rem;
             padding-inline: 1rem;
             cursor: pointer;
+            border: 2px solid transparent;
 
             /*
             .compile_dollar_icon {}
@@ -63,6 +64,14 @@
                     color: v.$grayish-cyan;
                 }
             }
+        }
+
+        #inputValid {
+            border: 2px solid v.$strong-cyan;
+        }
+
+        #inputInvalid {
+            border: 2px solid v.$error;
         }
     }
 
@@ -90,6 +99,7 @@
                 font-size: v.$fs;
                 padding-block: .375rem;
                 padding-inline: 1rem;
+                cursor: pointer;
 
                 @media screen and (min-width: v.$min-width) {
                     flex-basis: 7.25rem;
@@ -98,12 +108,29 @@
 
             .tip_percentage {
                 background-color: v.$very-dark-cyan;
-                color: v.$white;                
+                color: v.$white;
             }
+
+            .tip_custom {
+                border: 2px solid transparent;
+            }
+
+            #chosen {
+                background-color: v.$strong-cyan;
+                color: v.$very-dark-cyan;
+            }            
 
             #selected {
                 background-color: v.$strong-cyan;
                 color: v.$very-dark-cyan;
+            }
+
+            #inputValid {
+                border: 2px solid v.$strong-cyan;
+            }
+    
+            #inputInvalid {
+                border: 2px solid v.$error;
             }
 
             .tip_custom {
