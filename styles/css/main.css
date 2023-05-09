@@ -360,7 +360,12 @@ p, h1, h2, h3, h4, h5, h6 {
   padding-block: 0.5rem;
   font-size: 1.2rem;
   border-radius: 0.25rem;
+}
+.tip_block_result .reset:disabled {
   opacity: 25%;
+}
+.tip_block_result .reset:hover {
+  cursor: pointer;
 }
 
 /* Abstracts */
