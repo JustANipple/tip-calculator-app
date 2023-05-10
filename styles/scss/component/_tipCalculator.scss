@@ -65,14 +65,6 @@
                 }
             }
         }
-
-        #inputValid {
-            border: 2px solid v.$strong-cyan;
-        }
-
-        #inputInvalid {
-            border: 2px solid v.$error;
-        }
     }
 
     /* calculator tip */
@@ -115,24 +107,6 @@
                 border: 2px solid transparent;
             }
 
-            #chosen {
-                background-color: v.$strong-cyan;
-                color: v.$very-dark-cyan;
-            }            
-
-            #selected {
-                background-color: v.$strong-cyan;
-                color: v.$very-dark-cyan;
-            }
-
-            #inputValid {
-                border: 2px solid v.$strong-cyan;
-            }
-    
-            #inputInvalid {
-                border: 2px solid v.$error;
-            }
-
             .tip_custom {
                 text-align: right;
                 background-color: v.$very-light-grayish-cyan;
@@ -152,4 +126,3 @@
         }
     }
 }
-

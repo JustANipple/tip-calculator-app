@@ -1,8 +1,35 @@
 /*
 TO_DO:
-Reset unlocks when at least one of the inputs are filled
-Reset hover state
-Amounts update if inputs are all true
+Bill states:
+-Border green when pattern is valid
+-Border red when pattern is invalid
+-Error label shown when pattern is invalid
+-Cursor pointer when hovered
+
+Tip buttons states:
+-On hover, saturate(.375) brightness(1.375)
+-On click, change its color, save its state and reset the custom tip
+-On another click, make all btns to default except it
+
+Custom tip states:
+-Border green when pattern is valid
+-Border red when pattern is invalid
+-Cursor pointer when hovered
+-On change, reset tip btns
+
+People number states:
+-Border green when pattern is valid
+-Border red when pattern is invalid
+-Error label shown when pattern is invalid
+-Cursor pointer when hovered
+
+Reset states:
+-Enable it when any input is entered
+-On click, make all the inputs reset
+-On hover, saturate(.375) brightness(1.375)
+
+Amounts states:
+-Amounts update if bill, any tip and people number is compiled and valid
 */
 
 /* === Bill and People number Input === */
