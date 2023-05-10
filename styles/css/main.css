@@ -253,6 +253,13 @@ p, h1, h2, h3, h4, h5, h6 {
   background-color: hsl(183, 100%, 15%);
   color: hsl(0, 0%, 100%);
 }
+.tip_calculator .calculator_tip .tip_options .tip_percentage:hover {
+  filter: saturate(0.375) brightness(1.375);
+}
+.tip_calculator .calculator_tip .tip_options #chosen {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
 .tip_calculator .calculator_tip .tip_options .tip_custom {
   text-align: right;
   background-color: hsl(189, 41%, 97%);

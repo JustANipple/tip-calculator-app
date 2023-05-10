@@ -114,6 +114,15 @@
             .tip_percentage {
                 background-color: v.$very-dark-cyan;
                 color: v.$white;
+
+                &:hover {
+                    filter: saturate(.375) brightness(1.375);
+                }
+            }
+
+            #chosen {
+                background-color: v.$strong-cyan;
+                color: v.$very-dark-cyan;
             }
 
             .tip_custom {

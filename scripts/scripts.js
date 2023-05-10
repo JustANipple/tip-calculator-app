@@ -56,9 +56,10 @@ customTip.addEventListener("input", checkInput);
 customTip.addEventListener("input", resetButtons);
 for(const btn of tipBtns) {
     btn.addEventListener("click", resetCustom);
+    btn.addEventListener("click", (e) => {
+        changeStatus(btn, e);
+    });
 }
-
-
 
 
 /* Functions */
@@ -103,4 +104,10 @@ function resetButtons() {
 function resetCustom() {
     customTip.setAttribute("id", "");
     customTip.value = "";
+}
+
+function changeStatus(btn, e) {
+    e.preventDefault();
+    resetButtons();
+    btn.setAttribute("id", "chosen");
 }
