@@ -260,6 +260,7 @@ p, h1, h2, h3, h4, h5, h6 {
   outline: none;
   color: hsl(183, 100%, 15%);
   border: 2px solid transparent;
+  transition: all 0.5s ease-in-out;
 }
 @media screen and (min-width: 48rem) {
   .tip_calculator .calculator_tip .tip_options .tip_custom {
@@ -272,6 +273,12 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 .tip_calculator .calculator_tip .tip_options .tip_custom::placeholder {
   color: hsl(186, 14%, 43%);
+}
+.tip_calculator .calculator_tip .tip_options #valid {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+.tip_calculator .calculator_tip .tip_options #error {
+  border: 2px solid hsl(12, 32%, 56%);
 }
 
 .tip_block_result {

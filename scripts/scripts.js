@@ -40,8 +40,8 @@ People: int, not 0, not empty
 */
 
 /* Variables */
-let billAndPeople = document.querySelectorAll(".compile_input");
-const customTip = document.querySelector(".tip_custom");
+let billAndPeople = document.querySelectorAll(".compile_input"); //bill and people inputs
+const customTip = document.querySelector(".tip_custom"); //custom tip
 const tipBtns = document.querySelectorAll(".tip_percentage"); //tip
 const amountTip = document.querySelector(".tip_value .value_number"); //tip amount
 const amountTot = document.querySelector(".total_value .value_number"); //total
@@ -51,26 +51,56 @@ const resetBtn = document.querySelector(".reset"); //reset
 for(const input of billAndPeople) {
     input.addEventListener("input", checkInput);
 }
+customTip.addEventListener("input", checkInput);
 
+customTip.addEventListener("input", resetButtons);
+for(const btn of tipBtns) {
+    btn.addEventListener("click", resetCustom);
+}
+
+
+
+
+/* Functions */
 function checkInput() {
     const error = this.parentElement.parentElement.querySelector(".label_error");
-    const cont = this.parentElement;
+    let cont = this.parentElement;
+    if(!error) {
+        cont = this;
+    }
     if(this.value < 0) {
         this.setCustomValidity("must be greater than 0");
         cont.setAttribute("id", "error");
     } else if (this.value === "0") {
         cont.setAttribute("id", "error");
-        error.style.opacity = "1";
-        error.style.visibility = "visible";
+        if(error) {
+            error.style.opacity = "1";
+            error.style.visibility = "visible";
+        }
     } else if (this.value === "") {
         this.setCustomValidity("compile this");
         cont.setAttribute("id", "");
-        error.style.opacity = "0";
-        error.style.visibility = "hidden";
+        if(error) {
+            error.style.opacity = "0";
+            error.style.visibility = "hidden";
+        }
     } else {
         this.setCustomValidity("");
         cont.setAttribute("id", "valid");  
-        error.style.opacity = "0";
-        error.style.visibility = "hidden";
+        if(error) {
+            error.style.opacity = "0";
+            error.style.visibility = "hidden";
+        }
     }
+}
+
+function resetButtons() {
+    for(const btn of tipBtns) {
+        btn.setAttribute("id", "");
+    }
+}
+
+function resetCustom() {
+    customTip.setAttribute("id", "");
+    customTip.value = "";
 }

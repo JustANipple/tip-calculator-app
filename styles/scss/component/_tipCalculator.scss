@@ -123,6 +123,7 @@
                 outline: none;
                 color: v.$very-dark-cyan;
                 border: 2px solid transparent;
+                transition: all .5s ease-in-out;
 
                 @media screen and (min-width: v.$min-width) {
                     max-width: 7.25rem;
@@ -136,6 +137,14 @@
                 &::placeholder {
                     color: v.$dark-grayish-cyan;
                 }
+            }
+
+            #valid {
+                border: 2px solid v.$strong-cyan;
+            }
+    
+            #error {
+                border: 2px solid v.$error;
             }
         }
     }
