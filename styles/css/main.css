@@ -152,6 +152,7 @@ p, h1, h2, h3, h4, h5, h6 {
   color: hsl(12, 32%, 56%);
   visibility: hidden;
   opacity: 0;
+  transition: all 0.5s ease-in-out;
 }
 .tip_calculator .calculator_bill .bill_compile,
 .tip_calculator .calculator_bill .number_compile,
@@ -171,17 +172,14 @@ p, h1, h2, h3, h4, h5, h6 {
   padding-inline: 1rem;
   cursor: pointer;
   border: 2px solid transparent;
+  transition: all 0.5s ease-in-out;
   /*
   .compile_dollar_icon {}
   */
 }
 .tip_calculator .calculator_bill .bill_compile .compile_input,
-.tip_calculator .calculator_bill .bill_compile .compile_input,
-.tip_calculator .calculator_bill .number_compile .compile_input,
 .tip_calculator .calculator_bill .number_compile .compile_input,
 .tip_calculator .calculator_people_number .bill_compile .compile_input,
-.tip_calculator .calculator_people_number .bill_compile .compile_input,
-.tip_calculator .calculator_people_number .number_compile .compile_input,
 .tip_calculator .calculator_people_number .number_compile .compile_input {
   text-align: right;
   color: hsl(183, 100%, 15%);
@@ -192,15 +190,25 @@ p, h1, h2, h3, h4, h5, h6 {
   outline: none;
   cursor: inherit;
 }
-.tip_calculator .calculator_bill .bill_compile .compile_input::placeholder,
+.tip_calculator .calculator_bill .bill_compile .compile_input::-webkit-inner-spin-button,
+.tip_calculator .calculator_bill .number_compile .compile_input::-webkit-inner-spin-button,
+.tip_calculator .calculator_people_number .bill_compile .compile_input::-webkit-inner-spin-button,
+.tip_calculator .calculator_people_number .number_compile .compile_input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
 .tip_calculator .calculator_bill .bill_compile .compile_input::placeholder,
 .tip_calculator .calculator_bill .number_compile .compile_input::placeholder,
-.tip_calculator .calculator_bill .number_compile .compile_input::placeholder,
 .tip_calculator .calculator_people_number .bill_compile .compile_input::placeholder,
-.tip_calculator .calculator_people_number .bill_compile .compile_input::placeholder,
-.tip_calculator .calculator_people_number .number_compile .compile_input::placeholder,
 .tip_calculator .calculator_people_number .number_compile .compile_input::placeholder {
   color: hsl(184, 14%, 56%);
+}
+.tip_calculator .calculator_bill #valid,
+.tip_calculator .calculator_people_number #valid {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+.tip_calculator .calculator_bill #error,
+.tip_calculator .calculator_people_number #error {
+  border: 2px solid hsl(12, 32%, 56%);
 }
 .tip_calculator .calculator_tip {
   display: flex;
@@ -246,20 +254,21 @@ p, h1, h2, h3, h4, h5, h6 {
   color: hsl(0, 0%, 100%);
 }
 .tip_calculator .calculator_tip .tip_options .tip_custom {
-  border: 2px solid transparent;
-}
-.tip_calculator .calculator_tip .tip_options .tip_custom {
   text-align: right;
   background-color: hsl(189, 41%, 97%);
   max-width: 9.125rem;
   outline: none;
   color: hsl(183, 100%, 15%);
+  border: 2px solid transparent;
 }
 @media screen and (min-width: 48rem) {
   .tip_calculator .calculator_tip .tip_options .tip_custom {
     max-width: 7.25rem;
     padding-inline-start: 0;
   }
+}
+.tip_calculator .calculator_tip .tip_options .tip_custom::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 .tip_calculator .calculator_tip .tip_options .tip_custom::placeholder {
   color: hsl(186, 14%, 43%);
@@ -341,9 +350,6 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 .tip_block_result .reset:disabled {
   opacity: 25%;
-}
-.tip_block_result .reset:hover {
-  cursor: pointer;
 }
 
 /* Abstracts */

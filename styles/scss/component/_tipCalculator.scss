@@ -29,6 +29,7 @@
                 color: v.$error;
                 visibility: hidden;
                 opacity: 0;
+                transition: all .5s ease-in-out;
             }
         }
 
@@ -44,12 +45,12 @@
             padding-inline: 1rem;
             cursor: pointer;
             border: 2px solid transparent;
+            transition: all .5s ease-in-out;
 
             /*
             .compile_dollar_icon {}
             */
 
-            .compile_input,
             .compile_input {
                 text-align: right;
                 color: v.$very-dark-cyan;
@@ -59,11 +60,23 @@
                 border: none;
                 outline: none;
                 cursor: inherit;
+                
+                &::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                }
 
                 &::placeholder {
                     color: v.$grayish-cyan;
                 }
             }
+        }
+
+        #valid {
+            border: 2px solid v.$strong-cyan;
+        }
+
+        #error {
+            border: 2px solid v.$error;
         }
     }
 
@@ -104,19 +117,20 @@
             }
 
             .tip_custom {
-                border: 2px solid transparent;
-            }
-
-            .tip_custom {
                 text-align: right;
                 background-color: v.$very-light-grayish-cyan;
                 max-width: 9.125rem;
                 outline: none;
                 color: v.$very-dark-cyan;
+                border: 2px solid transparent;
 
                 @media screen and (min-width: v.$min-width) {
                     max-width: 7.25rem;
                     padding-inline-start: 0;
+                }
+
+                &::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
                 }
                 
                 &::placeholder {
