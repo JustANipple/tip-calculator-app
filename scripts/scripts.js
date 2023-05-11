@@ -181,6 +181,12 @@ function calculateAmount() {
     const tipValue = getTip();
 
     if(billValue > 0 && peopleValue > 0 && tipValue > 0) {
-        amountTip.textContent = billValue / ;
+        const tipTotal = (billValue / peopleValue / 100 * 15).toFixed(2);
+        amountTip.textContent = tipTotal ;
+        amountTot.textContent = (((tipTotal * peopleValue) + billValue) / peopleValue).toFixed(2);
+        console.log(tipTotal * peopleValue);
+    } else {
+        amountTip.textContent = "0.00";
+        amountTot.textContent = "0.00";
     }
 }
