@@ -55,9 +55,15 @@
         padding-block: .5rem;
         font-size: calc(v.$fs / 1.25);
         border-radius: .25rem;
+        cursor: pointer;
 
         &:disabled {
             opacity: 25%;
+            cursor: default;
+        }
+
+        &:enabled:hover {
+            filter: saturate(.375) brightness(1.375);
         }
     }
 }
