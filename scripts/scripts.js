@@ -149,6 +149,38 @@ function resetForm() {
     resetBtn.disabled = true;
 }
 
-function calculateAmount() {
+function getBill() {
+    if(billAndPeople[0].parentElement.getAttribute("id") === "valid") {
+        return billAndPeople[0].value;
+    } else {
+        return 0;
+    }
+}
 
+function getPeople() {
+    if(billAndPeople[1].parentElement.getAttribute("id") === "valid") {
+        return billAndPeople[1].value;
+    } else {
+        return 0;
+    }
+}
+
+function getTip() {
+    for(const btn of tipBtns) {
+        if(btn.getAttribute("id") === "chosen") {
+            return btn.textContent.replace("%", "");
+        } else if (customTip.getAttribute === "valid") {
+            return customTip.value;
+        }
+    }
+}
+
+function calculateAmount() {
+    const billValue = getBill();
+    const peopleValue = getPeople();
+    const tipValue = getTip();
+
+    if(billValue > 0 && peopleValue > 0 && tipValue > 0) {
+        amountTip.textContent = billValue / ;
+    }
 }
