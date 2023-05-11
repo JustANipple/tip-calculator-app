@@ -1,44 +1,3 @@
-/*
-TO_DO:
-Bill states:
--Border green when pattern is valid
--Border red when pattern is invalid
--Error label shown when pattern is invalid
--Cursor pointer when hovered
-
-Tip buttons states:
--On hover, saturate(.375) brightness(1.375)
--On click, change its color, save its state and reset the custom tip
--On another click, make all btns to default except it
-
-Custom tip states:
--Border green when pattern is valid
--Border red when pattern is invalid
--Cursor pointer when hovered
--On change, reset tip btns
-
-People number states:
--Border green when pattern is valid
--Border red when pattern is invalid
--Error label shown when pattern is invalid
--Cursor pointer when hovered
-
-Reset states:
--Enable it when any input is entered
--On click, make all the inputs reset
--On hover, saturate(.375) brightness(1.375)
-
-Amounts states:
--Amounts update if bill, any tip and people number is compiled and valid
-*/
-
-/*
-bill, custom and people patterns
-Bill: decimal, not 0, not empty
-Custom: int, from 1 to 100, not empty
-People: int, not 0, not empty
-*/
-
 /* Variables */
 const billAndPeople = document.querySelectorAll(".compile_input"); //bill and people inputs
 const customTip = document.querySelector(".tip_custom"); //custom tip
@@ -75,7 +34,6 @@ for(const btn of tipBtns) {
 
 resetBtn.addEventListener("click", resetForm);
 resetBtn.style.transition = "filter .5s ease-in-out";
-
 
 /* Functions */
 function checkInput(obj) {
@@ -132,6 +90,11 @@ function resetCustom() {
     customTip.value = "";
 }
 
+function resetAmounts() {
+    amountTot.textContent = "0.00";
+    amountTip.textContent = "0.00";
+}
+
 function changeStatus(btn, e) {
     e.preventDefault();
     resetButtons();
@@ -146,6 +109,7 @@ function resetForm() {
     resetInputs();
     resetButtons();
     resetCustom();
+    resetAmounts();
     resetBtn.disabled = true;
 }
 
@@ -176,15 +140,15 @@ function getTip() {
 }
 
 function calculateAmount() {
-    const billValue = getBill();
+    const billValue = parseInt(getBill());
     const peopleValue = getPeople();
     const tipValue = getTip();
 
     if(billValue > 0 && peopleValue > 0 && tipValue > 0) {
         const tipTotal = (billValue / peopleValue / 100 * 15).toFixed(2);
         amountTip.textContent = tipTotal ;
-        amountTot.textContent = (((tipTotal * peopleValue) + billValue) / peopleValue).toFixed(2);
-        console.log(tipTotal * peopleValue);
+        const totalAmount = ((tipTotal * peopleValue + billValue) / peopleValue).toFixed(2);
+        amountTot.textContent = totalAmount;
     } else {
         amountTip.textContent = "0.00";
         amountTot.textContent = "0.00";
